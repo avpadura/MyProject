@@ -1,0 +1,43 @@
+Install Docker on Ubuntu 20.04
+=============================================================================================================================================
+sudo apt update
+
+sudo apt install apt-transport-https
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -                                        = download key
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"       = download files only this https
+
+sudo apt update
+
+sudo apt install docker-ce                      = instal docker
+
+sudo systemctl status docker                    = check if the docker has started
+
+
+================================================================================================================================================
+Basic docker commands
+
+docker run hello-world                          = download and run image hello-world or just run if the image is downloaded
+
+docker ps                                       = show containers that are currently running
+
+docker ps -a                                    = to view containers that have ever been launched
+
+docker images                                   = checking the presence of images
+
+docker search hello-world                       = search image on dockerhab (as an example here search images "hello-world")
+
+docker pull hello-world                         = only download image
+
+docker build -t newimage .                      = create a new image
+
+docker tag newimage:v1 newimage:copy            = copy image with tag replacement
+
+docker rm                                       = delete container
+
+docker rmi                                      = delete image
+
+docker rm -f $(docker ps -aq)                   = delete all containers
+
+docker rmi -f $(docker images -q)               = delete all images
