@@ -42,12 +42,12 @@ class ConverterApp(MDApp):
         # top toolbar
         self.toolbar = MDToolbar(title="Miles in Kilometers")
         self.toolbar.pos_hint = {"top": 1}
-        self.toolbar.right_action_items = [["rotate-3d-variant", lambda x: self.flip()]] # значок перевертання з двійкового в десятковий і навпаки
+        self.toolbar.right_action_items = [["rotate-3d-variant", lambda x: self.flip()]]
         screen.add_widget(self.toolbar)
 
         # logo
         screen.add_widget(Image
-            (source="credcalc.jpg", # скачати з інтернету якийсь логотип
+            (source="credcalc.jpg",
              pos_hint = {"center_x": 0.5, "center_y":0.7},
              size_hint=(0.2, 0.3)
              ))
